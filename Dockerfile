@@ -4,6 +4,7 @@ COPY . ./TrWebOCR
 RUN apt update && apt install -y libglib2.0-dev libsm6 libxrender1 libxext-dev
 RUN pip install -r ./TrWebOCR/requirements.txt
 RUN python ./TrWebOCR/install.py
+RUN python setup.py install
 EXPOSE 8089
 CMD ["python","  ./TrWebOCR/backend/main.py"]
 
